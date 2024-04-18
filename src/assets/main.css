@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+
+body{
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+
+/* css scroll animation */
+
+.scroll-watcher{
+  height: 10px;
+  position: fixed;
+  top: 0;
+  z-index: 40;
+  background-color: #FB923C;
+  width: 100%;
+  scale: 0 1;
+  animation: scroll-watcher linear;
+  animation-timeline: scroll();
+}
+
+@keyframes scroll-watcher {
+  to {scale: 1 1;}
+}
+
+.fade-in {
+  opacity: 0; /* Initially hide the element */
+  animation: fade-in 0.5s ease-in forwards; /* Apply the fade-in animation */
+  animation-timeline: view();
+  animation-range: 0 50vh;
+}
+
+@keyframes fade-in {
+  0% { scale: .5; opacity: 0; } /* Start with opacity 0 */
+
+  50% { scale: .8; opacity: .5; } /* Start with opacity 0 */
+  
+  100% {scale:1; opacity: 1; } /* End with opacity 1 */ 
+}
+
+.move-in {
+  animation: move-in 1s ease forwards;
+  animation-timeline: view();
+  animation-range: 0 50vh;
+  
+}
+
+@keyframes move-in {
+  0% {
+    scale:0; transform: translateX(-100%); /* Start position: top-left corner */
+  }
+  100% {
+    scale:1;transform: translateX( 0); /* End position: initial position */
+  }
+}
+
+
+
+
+
+
+
+/*  used to prevent body scrolling when modal is open */
+.modal-open {
+  overflow: hidden;
+}
+
+
+/* border animation from codepen */
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.moving-border {
+ 
+  position: relative;
+ 
+  padding: 4px;
+}
+.moving-border::before,
+.moving-border::after {
+  content: "";
+  position: absolute;
+  inset: -0.2rem;
+  z-index: -1;
+  background: linear-gradient(var(--angle), 
+  #FCA4AF,  #000000, #FB923C);
+  animation: rotate 10s linear infinite;
+  border-radius: 10px;
+}
+.moving-border::after {
+  filter: blur(10px);
+}
+@keyframes rotate {
+  0%     { --angle: 0deg; }
+  100%   { --angle: 360deg;
+  }
+}
+
+
+
+
+
+
+
+
