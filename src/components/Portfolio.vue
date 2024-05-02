@@ -5,7 +5,7 @@
       <h1 class="fade-in lg:text-7xl md:text-7xl text-5xl mb-32 mx-auto flex justify-center font-black text-orange-400 items-center content-center">04//portfolio</h1>
       <!-- Filter  -->
 
-      <ul id="filter-buttons" class="move-in flex lg:flex-row md:flex-row flex-wrap text-md mt-7 mx-4 lg:p-10 md:p-10 mb-5">
+      <ul id="filter-buttons" class=" flex lg:flex-row md:flex-row flex-wrap text-md mt-7 mx-4 lg:p-10 md:p-10 mb-5">
               <li class="lg:ml-7 mr-6 mt-2 text-orange-300">Filter by</li>
               <li class="mr-7 mt-2" :key="identifier" @click="filterCards('')"><a class="text-orange-300  hover:text-rose-300 cursor-pointer">// All</a></li>
               <li class="mr-7 mt-2" :key="identifier" @click="filterCards('development')"><a class="text-orange-300  hover:text-rose-300 cursor-pointer">01// Development</a></li>
